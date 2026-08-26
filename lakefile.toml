@@ -1,0 +1,10 @@
+name = "text"
+version = "0.1.0"
+defaultTargets = ["text"]
+
+[[lean_lib]]
+name = "Text"
+
+[[lean_exe]]
+name = "text"
+root = "Main"
