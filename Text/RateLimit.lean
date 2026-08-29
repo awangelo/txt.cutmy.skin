@@ -36,9 +36,9 @@ def ceilSeconds (ms : Nat) : Nat := (ms + 999) / 1000
 
 /--
 Checks one attempt from `ip`: when allowed, the attempt is recorded,
-when denied, `retryAfterSeconds` say how long to wait. In both cases,
-old timestamps for `ip` are removed.
-When the map reaches `maxIps`, expired ones are removed.
+when denied, `retryAfterSeconds` says how long to wait and the state is
+returned unchanged. When the map exceeds `maxIps` IPs, expired ones
+are dropped first.
 -/
 def check (state : State) (ip : String) (nowMs : Nat) (window : Nat := windowMs)
     (limit : Nat := uploadLimit) (maxIps : Nat := 1024) : Decision :=
