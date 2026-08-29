@@ -24,8 +24,8 @@ printf 'hi alice' | curl --data-binary @- txt.cutmy.skin  # a single string
 ### Download
 
 ```sh
-curl -s txt.cutmy.skin/{id}  # stdout
-curl -s txt.cutmy.skin/{id} | rg -i -C 3 "^err"  # pipe
+curl txt.cutmy.skin/{id}  # stdout
+curl txt.cutmy.skin/{id} | rg -i -C 3 "^err"  # pipe
 curl txt.cutmy.skin/{id} -o saved.cfg  # save to file
 ```
 
